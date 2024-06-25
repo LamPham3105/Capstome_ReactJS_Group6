@@ -1,0 +1,81 @@
+.container {
+  position: relative;
+}
+
+.carousel-content {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.75
+  ); /* Light background with 75% opacity */
+  padding: 1rem; /* Padding around the content */
+}
+
+.carousel-inner {
+  overflow: hidden; /* Ensure content within the carousel is clipped */
+}
+
+.carousel-img {
+  max-width: 40%; /* Adjust image width as needed */
+}
+
+.carousel-caption {
+  max-width: 55%; /* Adjust caption width as needed */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.75
+  ); /* Light background with 75% opacity */
+  border: none;
+  z-index: 1000; /* Ensure controls are above carousel content */
+  width: 50px; /* Adjust width of the controls */
+  height: 50px; /* Adjust height of the controls */
+  border-radius: 50%; /* Round the controls */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.carousel-control-prev {
+  background-color: black;
+  left: -50px; /* Adjust position from the left as needed */
+}
+
+.carousel-control-next {
+  background-color: black;
+  right: -50px; /* Adjust position from the right as needed */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: rgba(255, 255, 255, 0.9); /* Lighten background on hover */
+}
+
+.dots {
+  text-align: center; /* Center align the dot navigation */
+  margin-top: 10px; /* Adjust margin as needed */
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #333;
+}
