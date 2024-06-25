@@ -6,7 +6,8 @@ import {
   isTokenExpired,
   getDataTextStorage,
   getDataJsonStorage,
-  setDataJsonStorage,
+  removeDataTextStorage,
+  delCookie,
   removeDataJsonStorage,
 } from "../../util/utilMethod";
 
@@ -32,6 +33,9 @@ const authSlice = createSlice({
     logout: (state) => {
       state.isLogin = false;
       state.userEmail = "";
+      removeDataJsonStorage(USER_LOGIN);
+      removeDataTextStorage(TOKEN_AUTHOR);
+      delCookie(TOKEN_AUTHOR);
     },
     setCartCount: (state) => {
       cart = getDataJsonStorage(CART);

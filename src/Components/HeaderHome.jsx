@@ -1,9 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../redux/reducers/authSlice";
 
 const HeaderHome = () => {
+  const dispatch = useDispatch();
+
   const { isLogin, userEmail, cartCount } = useSelector((state) => state.auth);
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
 
   const renderLoginLink = () => {
     if (isLogin) {
@@ -32,6 +39,11 @@ const HeaderHome = () => {
             <NavLink className="nav-link" to="/profile">
               {userEmail}
             </NavLink>
+          </li>
+          <li className="nav-item">
+            <button className="nav-link btn btn-link" onClick={handleLogout}>
+              Logout
+            </button>
           </li>
         </ul>
       );
