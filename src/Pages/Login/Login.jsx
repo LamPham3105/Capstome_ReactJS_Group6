@@ -5,8 +5,12 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { userApi } from "../../service/user/userApi";
 import { useMutation } from "@tanstack/react-query";
+import { useDispatch } from "react-redux";
+import { login, setCartCount } from "../../redux/reducers/authSlice";
 
 const Login = () => {
+  const dispatch = useDispatch();
+
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
@@ -31,6 +35,8 @@ const Login = () => {
     }),
     onSubmit: (values) => {
       mutation.mutate(values);
+      dispatch(login(values.email));
+      dispatch(setCartCount());
       navigate("/");
     },
   });

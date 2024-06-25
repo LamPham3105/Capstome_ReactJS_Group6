@@ -16,32 +16,30 @@ const Favourite = () => {
   else
     return (
       <div>
-        <div>
-          <table className="table table-striped">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Image</th>
-                <th>Name</th>
+        <table className="table table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Image</th>
+              <th>Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.productsFavorite.map((dataFavorite, index) => (
+              <tr key={index}>
+                <td>{dataFavorite.id}</td>
+                <td>
+                  <img
+                    src={dataFavorite.image}
+                    alt={dataFavorite.name}
+                    className="img-fluid w-50"
+                  />
+                </td>
+                <td>{dataFavorite.name}</td>
               </tr>
-            </thead>
-            <tbody>
-              {data.productsFavorite.map((dataFavorite, index) => (
-                <tr key={index}>
-                  <td>{dataFavorite.id}</td>
-                  <td>
-                    <img
-                      src={dataFavorite.image}
-                      alt={dataFavorite.name}
-                      className="img-fluid"
-                    />
-                  </td>
-                  <td>{dataFavorite.name}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+            ))}
+          </tbody>
+        </table>
       </div>
     );
 };

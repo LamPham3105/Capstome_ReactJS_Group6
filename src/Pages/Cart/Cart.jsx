@@ -17,6 +17,7 @@ import {
   setDataJsonStorage,
 } from "../../util/utilMethod";
 import { useNavigate } from "react-router-dom";
+import { setCartCount } from "../../redux/reducers/authSlice";
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -36,6 +37,7 @@ const Cart = () => {
 
   const handleDelete = (index) => {
     dispatch(deleteItem(index));
+    dispatch(setCartCount());
   };
 
   const handleSubmitOrder = () => {

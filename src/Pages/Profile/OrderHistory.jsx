@@ -50,7 +50,7 @@ const OrderHistory = () => {
                     <img
                       src={orderDetail.image}
                       alt={orderDetail.name}
-                      className="img-fluid"
+                      className="img-fluid w-50"
                     />
                   </td>
                   <td>{orderDetail.name}</td>

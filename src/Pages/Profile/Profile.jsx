@@ -82,7 +82,7 @@ const Profile = () => {
           <img
             src={imageAvatar}
             alt="Profile"
-            className="img-fluid rounded-circle mb-3"
+            className="img-fluid w-70 rounded-circle mb-3"
           />
         </div>
         <div className="col-md-9">

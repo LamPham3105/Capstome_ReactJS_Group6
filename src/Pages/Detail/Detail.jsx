@@ -8,6 +8,7 @@ import { addToCart } from "../../redux/reducers/cartSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../Components/Loading";
+import { setCartCount } from "../../redux/reducers/authSlice";
 
 const Detail = () => {
   const params = useParams();
@@ -31,6 +32,7 @@ const Detail = () => {
 
   const handleAddToCart = () => {
     dispatch(addToCart(data));
+    dispatch(setCartCount());
     navigate("/cart");
   };
 

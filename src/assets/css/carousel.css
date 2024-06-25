@@ -3,25 +3,20 @@
 }
 
 .carousel-content {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.75
-  ); /* Light background with 75% opacity */
-  padding: 1rem; /* Padding around the content */
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 1rem;
 }
 
 .carousel-inner {
-  overflow: hidden; /* Ensure content within the carousel is clipped */
+  overflow: hidden;
 }
 
 .carousel-img {
-  max-width: 40%; /* Adjust image width as needed */
+  max-width: 40%;
 }
 
 .carousel-caption {
-  max-width: 55%; /* Adjust caption width as needed */
+  max-width: 55%;
 }
 
 .carousel-control-prev,
@@ -29,41 +24,36 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.75
-  ); /* Light background with 75% opacity */
+  background-color: rgba(255, 255, 255, 0.75);
   border: none;
-  z-index: 1000; /* Ensure controls are above carousel content */
-  width: 50px; /* Adjust width of the controls */
-  height: 50px; /* Adjust height of the controls */
-  border-radius: 50%; /* Round the controls */
+  z-index: 1000;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color 0.3s ease; /* Smooth transition for background color */
+  transition: background-color 0.3s ease;
 }
 
 .carousel-control-prev {
   background-color: black;
-  left: -50px; /* Adjust position from the left as needed */
+  left: -50px;
 }
 
 .carousel-control-next {
   background-color: black;
-  right: -50px; /* Adjust position from the right as needed */
+  right: -50px;
 }
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-  background-color: rgba(255, 255, 255, 0.9); /* Lighten background on hover */
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .dots {
-  text-align: center; /* Center align the dot navigation */
-  margin-top: 10px; /* Adjust margin as needed */
+  text-align: center;
+  margin-top: 10px;
 }
 
 .dot {

@@ -1,32 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
-import {
-  USER_LOGIN,
-  CART,
-  isTokenExpired,
-  TOKEN_AUTHOR,
-  getDataTextStorage,
-  getDataJsonStorage,
-} from "../util/utilMethod";
+import { useSelector } from "react-redux";
 
 const HeaderHome = () => {
-  const [isLogin, setIsLogin] = useState(false);
-  const [cartCount, setCartCount] = useState(0);
-  const [userEmail, setUserEmail] = useState("");
-
-  useEffect(() => {
-    const loginStatus =
-      USER_LOGIN && !isTokenExpired(getDataTextStorage(TOKEN_AUTHOR));
-    setIsLogin(loginStatus);
-    if (loginStatus) {
-      setUserEmail(getDataJsonStorage(USER_LOGIN)?.email);
-    }
-  }, []);
-
-  useEffect(() => {
-    const cart = getDataJsonStorage(CART);
-    setCartCount(cart ? cart.length : 0);
-  }, [isLogin, cartCount]);
+  const { isLogin, userEmail, cartCount } = useSelector((state) => state.auth);
 
   const renderLoginLink = () => {
     if (isLogin) {

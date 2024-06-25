@@ -31,7 +31,7 @@ const removeDataTextStorage = (storeName) => {
 };
 
 const removeDataJsonStorage = (storeName) => {
-  localStorage.setItem(storeName);
+  localStorage.removeItem(storeName);
 };
 
 // Các hàm để thao tác với cookie
@@ -63,21 +63,17 @@ function delCookie(name) {
 const convertDateAndTime = (dateTimeString) => {
   const dateTime = new Date(dateTimeString);
 
-  // Extract date components
-  const year = dateTime.getFullYear();
-  const month = ("0" + (dateTime.getMonth() + 1)).slice(-2); // Months are zero-indexed
-  const day = ("0" + dateTime.getDate()).slice(-2);
+  const options = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+    hour12: true, // Use 12-hour format
+  };
 
-  // Extract time components
-  const hours = ("0" + dateTime.getHours()).slice(-2);
-  const minutes = ("0" + dateTime.getMinutes()).slice(-2);
-  const seconds = ("0" + dateTime.getSeconds()).slice(-2);
-
-  // Formatted date and time
-  const formattedDate = `${year}-${month}-${day}`;
-  const formattedTime = `${hours}:${minutes}:${seconds}`;
-
-  return `${formattedDate} ${formattedTime}`;
+  return dateTime.toLocaleString("en-US", options);
 };
 
 function isTokenExpired(token) {
