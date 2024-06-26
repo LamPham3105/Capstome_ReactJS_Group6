@@ -54,7 +54,7 @@ const Cart = () => {
         email,
       };
 
-      if (orderDetails != null && orderDetails.length != 0) {
+      if (orderDetails != null && orderDetails.orderDetail.length != 0) {
         const dataOrderLocal = getDataJsonStorage(CART);
         const existingProductIds = orderDetails.orderDetail.map(
           (item) => item.productId

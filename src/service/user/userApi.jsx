@@ -26,10 +26,11 @@ export class UserApi {
   }
 
   async postOrderCart(orderDetails) {
-    try {
-      const res = await httpClient.post("/api/Users/order", orderDetails);
-      return res.data.content;
-    } catch (error) {}
+    console.log("orderDetails: ", orderDetails);
+    // try {
+    //   const res = await httpClient.post("/api/Users/order", orderDetails);
+    //   return res.data.content;
+    // } catch (error) {}
   }
 
   async postGetProfile() {
